@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Links -->
+  <link rel="icon" href="./favicons/favicon-16x16.png">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Main JS -->
+  <script defer src="./js/script.js"></script>
+
+  <title>Pokédex</title>
+</head>
+<body>
+  <script>
+    function rain(){
+        let quantidadeDeraio = 70 ;
+        let body = document.querySelector('body');
+        let i = 0;
+        while(i < quantidadeDeraio){
+            let drop = document.createElement('i');  
+            let size = Math.random() * 4;
+            let posX = Math.floor(Math.random() * window.innerWidth);
+            let delay = Math.random() * -20;
+            let duration = Math.random() * 5;
+
+            drop.style.width = 0.2 + size + 'px';
+            drop.style.left = posX + 'px';
+            drop.style.animationDelay = delay + 's';
+            drop.style.animationDuration = 1 + duration + 's';
+            body.appendChild(drop);
+            i++
+        }
+    }
+    rain();
+  </script>
+  <main>
+    <img src="#" alt="pokemon" class="pokemon__image">
+
+    <h1 class="pokemon__data">
+      <span class="pokemon__number"></span> -
+      <span class="pokemon__name"></span>
+    </h1>
+
+    <form class="form">
+      <input
+        type="search"
+        class="input__search"
+        placeholder="Digite nome ou número"
+        required
+      />
+    </form>
+
+    <div class="buttons">
+      <button class="button btn-prev"> &lt;</button>
+      <button class="button btn-next"> &gt;</button>
+    </div>
+
+    <img src="./images/pokedex.png" alt="pokedex" class="pokedex">
+  </main>
+
+</body>
+</html>
